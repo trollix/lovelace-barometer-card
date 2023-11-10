@@ -2,11 +2,11 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.11';
+const CARD_VERSION = '0.1.12';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
-  'color: #ff7f50; font-weight: bold; background: black',
+  'color: orange; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray'
 );
 
@@ -290,8 +290,8 @@ class BarometerGaugeCard extends HTMLElement {
             root.getElementById("gauge-icons-thermo").style.display = 'none';
             root.getElementById("gauge-icons").style.display = 'block';
         }
-/*
-        if (needleBool === true) {
+
+        if (cardConfig.needle) {
             root.getElementById("gauge-a").style.backgroundColor = '#dedede';
             root.getElementById("gauge").style.zIndex = '3';
             root.getElementById("gauge").style.backgroundColor = '#ffffff00';
@@ -304,7 +304,7 @@ class BarometerGaugeCard extends HTMLElement {
         } else {
           root.getElementById("gauge").style.backgroundColor = 'var(--label-badge-yellow)';
         }
-        */
+    
     }
 
     _splitEntityAndAttribute(entity) {
