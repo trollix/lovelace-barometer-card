@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.15';
+const CARD_VERSION = '0.1.16';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -199,32 +199,45 @@ class BarometerGaugeCard extends HTMLElement {
       .gauge-c hr {
             visibility: hidden;
         }
-      .gauge-d{
-        z-index: 100;
-        position: absolute;
-        width: calc(var(--base-unit) * 4);
-        height: 0;
-        top: calc(var(--base-unit) * 2);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 0px 0px calc(var(--base-unit) * 2) calc(var(--base-unit) * 2) ;
-        transform-origin: center top;
-        transition: all 1.3s ease-in-out;
-        transform: rotate(45deg);
-      }
-      .gauge-e{
-        z-index: 101;
-        position: absolute;
-        width: calc(var(--base-unit) * 4);
-        height: 0;
-        top: calc(var(--base-unit) * 2);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 0px 0px calc(var(--base-unit) * 2) calc(var(--base-unit) * 2) ;
-        transform-origin: center top;
-        transition: all 1.3s ease-in-out;
-        transform: rotate(125deg);
-      }
+        .gauge-d{
+            z-index: 3;
+            position: absolute;
+            width: calc(var(--base-unit) * 4);
+            height: 0;
+            top: calc(var(--base-unit) * 2);
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0px 0px calc(var(--base-unit) * 2) calc(var(--base-unit) * 2) ;
+            transform-origin: center top;
+            transition: all 1.3s ease-in-out;
+            transform: rotate(45deg);
+          }
+          .gauge-d svg, .gauge-e svg {
+              float: left;
+            }
+            .gauge-e{
+                z-index: 3;
+                position: absolute;
+                width: calc(var(--base-unit) * 4);
+                height: 0;
+                top: calc(var(--base-unit) * 2);
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0px 0px calc(var(--base-unit) * 2) calc(var(--base-unit) * 2) ;
+                transform-origin: center top;
+                transition: all 1.3s ease-in-out;
+                transform: rotate(125deg);
+              }
+              #recentMinVal, #recentMaxVal {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.05);
+                margin-top: -.55em;
+                left: .5em;
+                transform: rotate(-90deg);
+                opacity: 0;
+                }
+
+        
     `;
         content.innerHTML = `
     <div id="gauge-icons" class="gauge-icons" style="display: none;">
