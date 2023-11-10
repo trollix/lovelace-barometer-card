@@ -1,4 +1,13 @@
-console.info(`%c BAROMETER-CARD \n%c      v1.4-beta.1`, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
+
+const CARD_VERSION = '0.1.2';
+
+console.info(
+  `%c  BAROMETER-CARD \n%c  Version ${CARD_VERSION}    `,
+  'color: orange; font-weight: bold; background: black',
+  'color: white; font-weight: bold; background: dimgray'
+);
+
+
 class BarometerGaugeCard extends HTMLElement {
     constructor() {
         super();
@@ -40,6 +49,13 @@ class BarometerGaugeCard extends HTMLElement {
             cardConfig.entity_max = entityMaxParts.entity;
             if (entityMaxParts.attribute) cardConfig.maxAttribute = entityMaxParts.attribute;
         }
+
+        if (cardConfig.needle !== undefined) {
+            const needleBool = cardConfig.needle;
+        } else {
+            let needleBool = true;
+        }
+        
 
         if (config.icon_color !== undefined) {
             var icon_color = config.icon_color;
@@ -270,6 +286,21 @@ class BarometerGaugeCard extends HTMLElement {
             root.getElementById("gauge-icons-water").style.display = 'none';
             root.getElementById("gauge-icons-thermo").style.display = 'none';
             root.getElementById("gauge-icons").style.display = 'block';
+        }
+
+        if (needleBool === true) {
+            root.getElementById("gauge-a").style.backgroundColor = '#dedede';
+            root.getElementById("gauge").style.zIndex = '3';
+            root.getElementById("gauge").style.backgroundColor = '#ffffff00';
+            root.getElementById("needle").style.visibility = 'visible';
+            root.getElementById("gauge-icons").style.paddingTop = '.15em';
+            root.getElementById("percent").style.paddingTop = '2.5em';
+            root.getElementById("gauge-data").style.zIndex = '7';
+            root.getElementById("container").style.overflow = 'visible';
+            card.style.height = 'calc(var(--base-unit)*4.4)';
+        }
+        if (needleBool !== true) {
+          root.getElementById("gauge").style.backgroundColor = 'var(--label-badge-yellow)';
         }
     }
 
