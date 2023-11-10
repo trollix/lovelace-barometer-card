@@ -2,11 +2,11 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.10';
+const CARD_VERSION = '0.1.11';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
-  'color: #e0ffff; font-weight: bold; background: black',
+  'color: #ff7f50; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray'
 );
 
@@ -52,14 +52,13 @@ class BarometerGaugeCard extends HTMLElement {
             cardConfig.entity_max = entityMaxParts.entity;
             if (entityMaxParts.attribute) cardConfig.maxAttribute = entityMaxParts.attribute;
         }
-/*
+
         if (config.needle !== undefined) {
-            const needleBool = config.needle;
+            cardConfig.needleBool = config.needle;
         } else {
-            const needleBool = true;
+            cardConfig.needleBool = false;
         }
-        */
-        const needleBool = true;
+        
 
         if (config.icon_color !== undefined) {
             var icon_color = config.icon_color;
