@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.19';
+const CARD_VERSION = '0.1.20';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -267,6 +267,25 @@ class BarometerGaugeCard extends HTMLElement {
         <div class="gauge-c" id="gauge"><svg id="needle"><polygon points=" 105,15 115,0 0,5"></polygon></svg></div>
         <div class="gauge-d" id="recentMin"><span id='recentMinVal'></span><svg id='minpointer' height="24" width="24"><polygon points="9,9 2,20 0,0" style="fill:#039be5" /></svg></div>
         <div class="gauge-e" id="recentMax"><span id='recentMaxVal'></span><svg id='maxpointer' height="24" width="24"><polygon points="9,9 2,20 0,0" style="fill:#fd0a07" /></svg></div>
+        
+        
+        <div class="gauge-d" id="recentMin">
+        <svg id="svg_min" style="margin-right: 90%; width: 18px;height: 18px; margin-top: -6px; padding-bottom: 10px" viewBox="0 0 24 24">
+            <title id="svg_min_title"></title>
+            <path fill="blue" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+    </svg>
+    </div>
+    <div class="gauge-e" id="recentMax">
+        <svg id="svg_max" style="margin-right: 90%; width: 18px;height: 18px; margin-top: -12px; padding-bottom:10px;" viewBox="0 0 24 24">
+            <title id="svg_max_title"></title>
+            <path fill="red" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+        </svg>
+    </div>
+
+
+        
+        
+        
         <div class="gauge-data" id="gauge-data">
             <div id="percent"></div>
             <div id="title"></div>
