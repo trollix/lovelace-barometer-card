@@ -1,9 +1,14 @@
-
+/*
 import {
     LitElement,
     html,
     css
 } from 'https://unpkg.com/lit-element@2.0.1/lit-element.js?module';
+*/
+
+const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
+const html = LitElement.prototype.html;
+const css = LitElement.prototype.css;
 
 const CARD_VERSION = '0.1.7';
 
