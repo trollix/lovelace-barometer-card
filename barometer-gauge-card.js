@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.18';
+const CARD_VERSION = '0.1.19';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -228,7 +228,7 @@ class BarometerGaugeCard extends HTMLElement {
                 transition: all 1.3s ease-in-out;
                 transform: rotate(125deg);
               }
-              #recentMinVal, #recentMaxVal {
+              #minval, #maxval {
                 position: absolute;
                 background: rgba(0, 0, 0, 0.05);
                 margin-top: -.55em;

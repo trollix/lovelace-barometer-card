@@ -8,13 +8,17 @@ A Home Assistant lovelace custom gauge card for barometer, thermometer, humidity
 ![humidity-and-custom](https://user-images.githubusercontent.com/25659602/106397020-a9231a80-640b-11eb-882e-3b38cde7fa69.png)
 
 ## Usage
+
 Add this card via HACS (recommended)
 
 Or manually :
 Add this custom card to your home assistant instance. Reference it into your lovelace configuration.
-```
+
+```yaml
+
   - type: js
     url: /local/lovelace/tempometer-gauge-card.js
+
 ```
 
 Finally :
@@ -24,7 +28,9 @@ Note :
 This card is made for a full row, don't try to put it in a grid or horizontal stack, it will look bad. I won't fix this.
 
 ## Options
+
 ### Card options
+
 | **Option**                | **Type**                        | **Description**                                                                                                                                                           |
 |---------------------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `entity` ***(required)*** | string                          | The entity to track. Can be followed by an attribute to track `entity.attribute)`                                                                                         |
@@ -43,6 +49,7 @@ This card is made for a full row, don't try to put it in a grid or horizontal st
 | `decimals`                | number                          | Decimal precision of entity value.                                                                                                                                        |
 
 #### Severity list
+
 Will match to the first entry in the list that is in range.
 
 | **Option**             | **Type** | **Description**                                                                                        |
@@ -52,6 +59,7 @@ Will match to the first entry in the list that is in range.
 | max                    | number   | Maximal value (inclusive) to match against. Matches if not set.                                        |
 
 Example:
+
 ```yaml
 severity:
   - color: red
@@ -63,9 +71,11 @@ severity:
 ```
 
 ## Tip
+
 The maximum and minimum bounds have a hover tooltip with their own values.
 
 ## Full examples
+
 ```yaml
 type: 'custom:tempometer-gauge-card'
 entity: sensor.barometer
@@ -90,6 +100,7 @@ severity:
   - color: "#000"  # always quote hex, yaml will see it as a comment otherwise
     min: 1035
 ```
+
 ```yaml
 type: 'custom:tempometer-gauge-card'
 entity: sensor.temperature
@@ -106,6 +117,7 @@ severity:
     color: yellow  # will match if temp is lower than 24 but higher than 22
   - color: red  # will always match
 ```
+
 ```yaml
 type: 'custom:tempometer-gauge-card'
 entity: sensor.power
