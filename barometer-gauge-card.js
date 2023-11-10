@@ -1,9 +1,9 @@
 
-const CARD_VERSION = '0.1.3';
+const CARD_VERSION = '0.1.4';
 
 console.info(
-  `%c  BAROMETER-CARD \n%c  Version ${CARD_VERSION}    `,
-  'color: orange; font-weight: bold; background: black',
+  `%c  BAROMETER-CARD %c  Version ${CARD_VERSION}    `,
+  'color: #1e90ff; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray'
 );
 
@@ -298,8 +298,7 @@ class BarometerGaugeCard extends HTMLElement {
             root.getElementById("gauge-data").style.zIndex = '7';
             root.getElementById("container").style.overflow = 'visible';
             card.style.height = 'calc(var(--base-unit)*4.4)';
-        }
-        if (needleBool !== true) {
+        } else {
           root.getElementById("gauge").style.backgroundColor = 'var(--label-badge-yellow)';
         }
     }
