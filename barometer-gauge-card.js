@@ -1,19 +1,11 @@
-/*
-import {
-    LitElement,
-    html,
-    css
-} from 'https://unpkg.com/lit-element@2.0.1/lit-element.js?module';
-*/
-
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.7';
+const CARD_VERSION = '0.1.8';
 
 console.info(
-  `%c BAROMETER-CARD %c  Version ${CARD_VERSION}    `,
+  `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
   'color: #00fa9a; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray'
 );
@@ -60,13 +52,14 @@ class BarometerGaugeCard extends HTMLElement {
             cardConfig.entity_max = entityMaxParts.entity;
             if (entityMaxParts.attribute) cardConfig.maxAttribute = entityMaxParts.attribute;
         }
-
+/*
         if (config.needle !== undefined) {
             const needleBool = config.needle;
         } else {
             const needleBool = true;
         }
-        needleBool = true;
+        */
+        const needleBool = true;
 
         if (config.icon_color !== undefined) {
             var icon_color = config.icon_color;
