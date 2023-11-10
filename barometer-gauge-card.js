@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.14';
+const CARD_VERSION = '0.1.15';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -247,7 +247,7 @@ class BarometerGaugeCard extends HTMLElement {
         <ha-icon class="icon2" icon=mdi:water-percent></ha-icon>
         <ha-icon class="icon3" icon=mdi:water></ha-icon>
     </div>
-    <div class="container">
+    <div class="container" id="container">
         <div class="gauge-a" id="gauge-a">
         </div>
         <div class="gauge-b"></div>
@@ -264,7 +264,7 @@ class BarometerGaugeCard extends HTMLElement {
                 <path fill="red" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
             </svg>
         </div>
-        <div class="gauge-data">
+        <div class="gauge-data" id="gauge-data">
             <div id="percent"></div>
             <div id="title"></div>
         </div>
