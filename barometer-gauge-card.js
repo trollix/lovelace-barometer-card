@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.12';
+const CARD_VERSION = '0.1.13';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -188,6 +188,14 @@ class BarometerGaugeCard extends HTMLElement {
             color: #797575;
             padding-right: .25em;
         }
+
+      #needle {
+            visibility: hidden;
+            overflow: visible;
+            fill: var(--label-badge-yellow);
+            transform: translateY(-5px);     
+      }
+
       .gauge-c hr {
             visibility: hidden;
         }
@@ -243,7 +251,7 @@ class BarometerGaugeCard extends HTMLElement {
         <div class="gauge-a">
         </div>
         <div class="gauge-b"></div>
-        <div class="gauge-c" id="gauge"></div>
+        <div class="gauge-c" id="gauge"><svg id="needle"><polygon points=" 105,15 115,0 0,5"></polygon></svg></div>
         <div class="gauge-d" id="recentMin">
             <svg id="svg_min" style="margin-right: 90%; width: 18px;height: 18px; margin-top: -6px; padding-bottom: 10px" viewBox="0 0 24 24">
                 <title id="svg_min_title"></title>
