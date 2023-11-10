@@ -1,9 +1,15 @@
 
-const CARD_VERSION = '0.1.5';
+import {
+    LitElement,
+    html,
+    css
+} from "https://unpkg.com/lit-element@latest/lit-element.js?module";
+
+const CARD_VERSION = '0.1.6';
 
 console.info(
-  `%c  BAROMETER-CARD %c  Version ${CARD_VERSION}    `,
-  'color: #1e90ff; font-weight: bold; background: black',
+  `%c BAROMETER-CARD %c  Version ${CARD_VERSION}    `,
+  'color: #00fa9a; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray'
 );
 
@@ -55,7 +61,7 @@ class BarometerGaugeCard extends HTMLElement {
         } else {
             const needleBool = true;
         }
-        
+        needleBool = true;
 
         if (config.icon_color !== undefined) {
             var icon_color = config.icon_color;
