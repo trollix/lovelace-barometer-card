@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.17';
+const CARD_VERSION = '0.1.18';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -139,7 +139,7 @@ class BarometerGaugeCard extends HTMLElement {
         padding-top: calc(var(--base-unit) * 0.15);
         font-size: calc(var(--base-unit) * 0.30);
       }
-      .gauge-icons{
+      #gauge-icons{
             width: calc(var(--base-unit) * 4);
             height: calc(var(--base-unit) * 2.5);
             text-align: center;
