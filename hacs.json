@@ -1,6 +1,6 @@
 {
-  "name": "Tempometer Gauge Card",
+  "name": "Barometer Gauge Card",
   "render_readme": true,
   "content_in_root": true,
-  "filename": "tempometer-gauge-card.js"
+  "filename": "barometer-gauge-card.js"
 }

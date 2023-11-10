@@ -1,5 +1,5 @@
-console.info(`%c TEMPOMETER-CARD \n%c      v1.4-beta.1`, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
-class TempometerGaugeCard extends HTMLElement {
+console.info(`%c BAROMETER-CARD \n%c      v1.4-beta.1`, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
+class BarometerGaugeCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -402,4 +402,4 @@ class TempometerGaugeCard extends HTMLElement {
     }
 }
 
-customElements.define('tempometer-gauge-card', TempometerGaugeCard);
+customElements.define('barometer-gauge-card', BarometerGaugeCard);

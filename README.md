@@ -1,4 +1,4 @@
-# Lovelace tempometer-gauge-card
+# Lovelace barometer-gauge-card
 
 Based on [SNoof85/lovelace-tempometer-gauge-card-deprecated](https://github.com/SNoof85/lovelace-tempometer-gauge-card-deprecated) with some small improvements and, if I feel it's necessary, maintenance.
 
