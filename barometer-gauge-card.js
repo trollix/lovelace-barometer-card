@@ -2,7 +2,7 @@ const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace")
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const CARD_VERSION = '0.1.9';
+const CARD_VERSION = '0.1.10';
 
 console.info(
   `%c  BAROMETER-CARD  %c  Version ${CARD_VERSION}    `,
@@ -305,8 +305,9 @@ class BarometerGaugeCard extends HTMLElement {
         } else {
           root.getElementById("gauge").style.backgroundColor = 'var(--label-badge-yellow)';
         }
+        */
     }
-*/
+
     _splitEntityAndAttribute(entity) {
         let parts = entity.split('.');
         if (parts.length < 3) {
