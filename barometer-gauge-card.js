@@ -3,9 +3,9 @@ import {
     LitElement,
     html,
     css
-} from "https://unpkg.com/lit-element@latest/lit-element.js?module";
+} from 'https://unpkg.com/lit-element@2.0.1/lit-element.js?module';
 
-const CARD_VERSION = '0.1.6';
+const CARD_VERSION = '0.1.7';
 
 console.info(
   `%c BAROMETER-CARD %c  Version ${CARD_VERSION}    `,
