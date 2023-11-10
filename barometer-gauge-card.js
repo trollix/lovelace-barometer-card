@@ -1,5 +1,5 @@
 
-const CARD_VERSION = '0.1.2';
+const CARD_VERSION = '0.1.3';
 
 console.info(
   `%c  BAROMETER-CARD \n%c  Version ${CARD_VERSION}    `,
@@ -50,10 +50,10 @@ class BarometerGaugeCard extends HTMLElement {
             if (entityMaxParts.attribute) cardConfig.maxAttribute = entityMaxParts.attribute;
         }
 
-        if (cardConfig.needle !== undefined) {
-            const needleBool = cardConfig.needle;
+        if (config.needle !== undefined) {
+            const needleBool = config.needle;
         } else {
-            let needleBool = true;
+            const needleBool = true;
         }
         
 
